@@ -6,7 +6,9 @@ import Joi from "joi";
 const NewsAPI = config.get("NewsAPI");
 
 const schema = Joi.object({
-  q: Joi.string().alphanum().required(),
+  q: Joi.string()
+    .regex(/^[a-zA-Z0-9\-\s]+$/)
+    .required(),
 });
 
 const newsHandler = (req, res) => {
