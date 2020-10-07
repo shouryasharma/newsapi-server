@@ -29,7 +29,6 @@ const newsHandler = (req, res) => {
 };
 
 const searchHandler = (req, res) => {
-  console.log(req.params);
   const { error, value } = schema.validate(req.params);
   if (error === undefined) {
     axios({
